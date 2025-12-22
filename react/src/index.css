@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Lexend+Deca:wght@100..900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+}
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+.createacc-form {
+  color: #443681;
+  padding: 80px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f2f3f6;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px 0px rgb(187, 187, 219);
+}
+.createacc-form input {
+  width: 350px;
+  height: 48px;
+  border-radius: 20px;
+  border: none;
+  padding-left: 30px;
+  background-color: #dad2ff;
+  box-shadow: inset 0px 4px 4px rgb(187, 187, 219);
+  font-size: 15px;
+}
+.createacc-form button {
+  margin-top: 50px;
+  height: 41px;
+  width: 157px;
+  margin-left: 110px;
+  background-color: #2546b1;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgb(187, 187, 219);
+}
+.createacc-form h1,
+.createacc-form a {
+  text-align: center;
+}
+.createacc-form h1 {
+  font-size: 24px;
+  background: linear-gradient(45deg, #504486, #2546b1);
+  -webkit-background-clip: text;
+  background-clip: text; /* future-proof */
+  -webkit-text-fill-color: transparent;
+}
+.createacc-form label {
+  margin-left: 10px;
+  font-weight: 500;
+}
