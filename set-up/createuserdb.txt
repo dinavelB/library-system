@@ -1,0 +1,9 @@
+CREATE USER 'app_user'@'localhost' IDENTIFIED BY 'strong_password';
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON my_database.*
+TO 'app_user'@'localhost';
+
+FLUSH PRIVILEGES;
+
+exit;
