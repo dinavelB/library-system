@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import "../index.css";
 
 export default function CreateAccount() {
@@ -90,9 +91,7 @@ export default function CreateAccount() {
           name="password"
           onChange={storeData}
         />
-        <a href="http://" target="_blank" rel="noopener noreferrer">
-          Already have an account? Login
-        </a>
+        <Link to={"/login"}>Have already an account? Login</Link>
         <button onClick={createAccount}>Create</button>
       </section>
     </section>

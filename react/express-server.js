@@ -28,11 +28,11 @@ app.use(express.json());
 
 //endpoints
 app.post("/create-account", (req, res) => {
-  const { user_Name, email, password } = req.body;
+  const { username, email, password } = req.body;
 
-  const data = [user_Name, email, password];
+  const data = [username, email, password];
 
-  if (!user_Name || !email || !password) {
+  if (!username || !email || !password) {
     return res.status(400).json({
       message: "failed to add user",
     });
@@ -51,6 +51,39 @@ app.post("/create-account", (req, res) => {
       res.status(200).json({
         message: "account created successfully",
       });
+    }
+  );
+});
+
+app.post("/login", (req, res) => {
+  console.log("Login route hit", req.body);
+  const { username, password } = req.body;
+
+  database.query(
+    "select * from Users where userName = ?",
+    [username],
+    (error, queryResults) => {
+      if (error) {
+        console.log(error);
+        return res.status(400).json({
+          error: "Account login failed.",
+        });
+      }
+
+      if (queryResults.length === 0) {
+        return res.status(404).json({ error: "User not found" });
+      }
+
+      const databasePass = queryResults[0].password;
+      if (password.trim() === databasePass) {
+        return res.status(200).json({
+          success: "Account successfully login",
+        });
+      } else {
+        return res
+          .status(401)
+          .json({ error: "incorrect password or username" });
+      }
     }
   );
 });

@@ -18,6 +18,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import "../index.css";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function CreateAccount() {
@@ -132,11 +133,9 @@ export default function CreateAccount() {
         placeholder: "Enter your password",
         name: "password",
         onChange: storeData
-      }), /*#__PURE__*/_jsx("a", {
-        href: "http://",
-        target: "_blank",
-        rel: "noopener noreferrer",
-        children: "Already have an account? Login"
+      }), /*#__PURE__*/_jsx(Link, {
+        to: "/login",
+        children: "Have already an account? Login"
       }), /*#__PURE__*/_jsx("button", {
         onClick: createAccount,
         children: "Create"
