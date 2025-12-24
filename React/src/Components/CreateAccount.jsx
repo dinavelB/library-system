@@ -54,7 +54,7 @@ export default function CreateAccount() {
     console.log(response);
 
     if (!responsePostDat.ok) {
-      console.log("Account creation failed....");
+      console.log("Account creation failed");
       return;
     }
 

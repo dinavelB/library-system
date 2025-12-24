@@ -81,7 +81,7 @@ export default function CreateAccount() {
               _context.n = 3;
               break;
             }
-            console.log("Account creation failed....");
+            console.log("Account creation failed");
             return _context.a(2);
           case 3:
             nav("/login");
