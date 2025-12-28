@@ -3,9 +3,9 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
 import { useState, useEffect } from "react";
 
-function NavigationBar({ animation, setAnimation }) {
+function NavigationBar({ animationLoad }) {
   return (
-    <nav className={`navigation-container${animation ? "active" : ""}`}>
+    <nav className={`navigation-container fade ${animationLoad ? "show" : ""}`}>
       <div className="me-btn">
         <FontAwesomeIcon icon={faUser} />
         <label htmlFor="">Me</label>
@@ -15,17 +15,17 @@ function NavigationBar({ animation, setAnimation }) {
   );
 }
 
-function Category({ bgColor, setBgColor }) {
+function Category({ bgColor, setBgColor, animationLoad }) {
   const categories = ["Fiction", "Romance", "Horror", "Educational", "History"];
 
   return (
-    <nav className="category-container">
+    <nav className={`category-container fade ${animationLoad ? "show" : ""}`}>
       <ul className="categories">
         {categories.map((category) => (
           <li
             key={category}
-            className={bgColor === category ? "active" : ""}
             onClick={() => setBgColor(category)}
+            className={bgColor === category ? "active" : ""}
           >
             {category}
           </li>
@@ -35,54 +35,71 @@ function Category({ bgColor, setBgColor }) {
   );
 }
 
-function Books() {
+function Books({ animationLoad }) {
   return (
-    <section className="book-container">
+    <section className={`book-container fade ${animationLoad ? "show" : ""}`}>
       <div>
         <h1>Book</h1>
+        <div></div>
       </div>
       <div>
         <h1>Book</h1>
+        <div></div>
       </div>
       <div>
         <h1>Book</h1>
+        <div></div>
       </div>
       <div>
         <h1>Book</h1>
+        <div></div>
       </div>
       <div>
         <h1>Book</h1>
+        <div></div>
       </div>
     </section>
   );
 }
 
 export default function Dashboard() {
+  //.categories li:not(.active):hover  not is the seudo class here and () is the condition
   const [nav, setNav] = useState(false);
   const [cat, setCat] = useState(false);
   const [books, setBooks] = useState(false);
 
-  const [animation, setAnimation] = useState(null);
+  const [categoryColor, setCategoryColor] = useState(null);
 
   useEffect(() => {
-    const loadTimer = [];
+    //let delay = 0;
+    const loadTimer = [setNav, setCat, setBooks];
 
-    loadTimer.push(setTimeout(() => setNav(true), 500));
-    loadTimer.push(setTimeout(() => setCat(true), 200));
-    loadTimer.push(
-      setTimeout(() => setBooks(true)),
-      500
-    );
+    //first param container for the array each index, second param for positioning
+    loadTimer.forEach((setStates, index) => {
+      setTimeout(() => {
+        setStates(true);
+      }, (index + 1) * 200);
+    });
+
+    /*
+    for(let setStates of loadTimer){
+      delay += 200
+      setTimeout(()=>(
+        setStates(true)
+      ), delay)
+    }
+    */
   }, []);
+  //states are true here and passed to the children (animationLoad)
   return (
     <>
-      {nav && (
-        <NavigationBar animation={animation} setAnimation={setAnimation} />
-      )}
-      {cat && (
-        <Category bgColor={categoryColor} setBgColor={setCategoryColor} />
-      )}
-      {books && <Books />}
+      <NavigationBar animationLoad={nav} />
+      <Category
+        bgColor={categoryColor}
+        setBgColor={setCategoryColor}
+        animationLoad={cat}
+      />
+      <Books animationLoad={books} />
     </>
   );
 }
