@@ -162,15 +162,48 @@ body {
   color: white;
 }
 
-.categories li:hover {
+.categories li:not(.active):hover {
   background-color: #443681;
   color: white;
 }
 
 .book-container {
+  margin-top: 60px;
   display: grid;
   grid-template-areas: "book1 book2 book3 book4";
+  gap: 20px;
+  padding: 0px 100px 0px 100px;
 }
 .me-btn FontAwesomeIcon {
   font-size: 20px;
+}
+.book-container div {
+  background-color: #eae7fa;
+}
+.navigation-container.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.navigation-container.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.category-container.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.category-container.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.book-container.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.book-container.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
