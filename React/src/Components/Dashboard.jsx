@@ -36,28 +36,20 @@ function Category({ bgColor, setBgColor, animationLoad }) {
 }
 
 function Books({ animationLoad }) {
+  const books = ["book1", "book2", "book3", "book1", "book2", "book3"]; //value
   return (
     <section className={`book-container fade ${animationLoad ? "show" : ""}`}>
-      <div>
-        <h1>Book</h1>
-        <div></div>
-      </div>
-      <div>
-        <h1>Book</h1>
-        <div></div>
-      </div>
-      <div>
-        <h1>Book</h1>
-        <div></div>
-      </div>
-      <div>
-        <h1>Book</h1>
-        <div></div>
-      </div>
-      <div>
-        <h1>Book</h1>
-        <div></div>
-      </div>
+      {books.map(
+        (
+          value,
+          index //mapping, index position
+        ) => (
+          <article key={index}>
+            <h1>{value}</h1>
+            <div></div>
+          </article>
+        )
+      )}
     </section>
   );
 }
@@ -76,6 +68,7 @@ export default function Dashboard() {
 
     //first param container for the array each index, second param for positioning
     loadTimer.forEach((setStates, index) => {
+      //delay
       setTimeout(() => {
         setStates(true);
       }, (index + 1) * 200);

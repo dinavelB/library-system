@@ -44,6 +44,7 @@ app.post("/create-account", (req, res) => {
       if (error) {
         console.log(error);
         return res.status(500).json({
+          //database error to
           message: "database error, failed to add user",
         });
       }
@@ -73,7 +74,7 @@ app.post("/login", (req, res) => {
         return res.status(404).json({ error: "User not found" });
       }
 
-      const databasePass = queryResults[0].password;
+      const databasePass = queryResults[0].password; // yung result ng query nag rereturn ng array kaya dapat set yung index
       if (password.trim() === databasePass) {
         return res.status(200).json({
           success: "Account successfully logged in",
