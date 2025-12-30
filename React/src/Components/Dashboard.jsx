@@ -36,21 +36,42 @@ function Category({ bgColor, setBgColor, animationLoad }) {
 }
 
 function Books({ animationLoad }) {
+  const [selectedBook, setSelectedBook] = useState(null);
   const books = ["book1", "book2", "book3", "book1", "book2", "book3"]; //value
+
+  const seeBook = (book) => {
+    setSelectedBook(book);
+    console.log("clicked book", book);
+  };
+
+  const closePopup = () => {
+    setSelectedBook(null);
+  };
   return (
-    <section className={`book-container fade ${animationLoad ? "show" : ""}`}>
-      {books.map(
-        (
-          value,
-          index //mapping, index position
-        ) => (
-          <article key={index}>
-            <h1>{value}</h1>
-            <div></div>
-          </article>
-        )
+    <>
+      <section className={`book-container fade ${animationLoad ? "show" : ""}`}>
+        {books.map(
+          (
+            value,
+            index //mapping, index position
+          ) => (
+            <article key={index}>
+              <h1>{value}</h1>
+              <div onClick={() => seeBook(index)}>Sample</div>
+            </article>
+          )
+        )}
+      </section>
+      {selectedBook && (
+        <div className="popup">
+          <div className="popup-content">
+            <span className="close" onClick={closePopup}>
+              ×
+            </span>
+          </div>
+        </div>
       )}
-    </section>
+    </>
   );
 }
 

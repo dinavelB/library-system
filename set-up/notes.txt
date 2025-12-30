@@ -1,0 +1,7 @@
+when creating pop-up: css
+
+position: fixed – makes the popup overlay the entire viewport instead of being part of the normal flow.
+top: 0; left: 0; – positions the popup at the top-left of the screen.
+z-index: 1000 – ensures the popup appears above all other elements.
+display: flex; justify-content: center; align-items: center; – centers the inner content.
+(Optional but recommended) background-color: rgba(..., 0.8) – semi-transparent overlay.
