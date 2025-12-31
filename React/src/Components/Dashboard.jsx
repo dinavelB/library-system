@@ -57,17 +57,21 @@ function Books({ animationLoad }) {
           ) => (
             <article key={index}>
               <h1>{value}</h1>
-              <div onClick={() => seeBook(index)}>Sample</div>
+              <div onClick={() => seeBook(value)}>Sample</div>
             </article>
           )
         )}
       </section>
       {selectedBook && (
-        <div className="popup">
+        <div className="popup" onClick={closePopup}>
           <div className="popup-content">
-            <span className="close" onClick={closePopup}>
-              ×
-            </span>
+            <div className="img-container"></div>
+            <div className="book-details">
+              <h1>Title</h1>
+              <label htmlFor="">Author's Name</label>
+              <p>Date</p>
+              <button>Borrow</button>
+            </div>
           </div>
         </div>
       )}
