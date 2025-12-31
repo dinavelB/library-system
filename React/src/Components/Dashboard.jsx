@@ -4,14 +4,29 @@ import "../index.css";
 import { useState, useEffect } from "react";
 
 function NavigationBar({ animationLoad }) {
+  const [userOptions, setUserOptions] = useState(false);
+
   return (
-    <nav className={`navigation-container fade ${animationLoad ? "show" : ""}`}>
-      <div className="me-btn">
-        <FontAwesomeIcon icon={faUser} />
-        <label htmlFor="">Me</label>
-      </div>
-      <input type="text" placeholder="Search Book" />
-    </nav>
+    <>
+      <nav
+        className={`navigation-container fade ${animationLoad ? "show" : ""}`}
+      >
+        <div className="me-btn" onClick={() => setUserOptions(true)}>
+          <FontAwesomeIcon icon={faUser} />
+          <label htmlFor="">Me</label>
+        </div>
+        <input type="text" placeholder="Search Book" />
+      </nav>
+
+      <section className={`user-option-container ${userOptions ? "open" : ""}`}>
+        <button onClick={() => setUserOptions(false)}>X</button>
+        <div className="options">
+          <label htmlFor="">Profile</label>
+          <label htmlFor="">Favorite Books</label>
+          <label htmlFor="">Borrowed Books</label>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -37,7 +52,7 @@ function Category({ bgColor, setBgColor, animationLoad }) {
 
 function Books({ animationLoad }) {
   const [selectedBook, setSelectedBook] = useState(null);
-  const books = ["book1", "book2", "book3", "book1", "book2", "book3"]; //value
+  const books = ["book1", "book2", "book3", "book4", "book5", "book6"]; //value
 
   const seeBook = (book) => {
     setSelectedBook(book);
@@ -67,7 +82,7 @@ function Books({ animationLoad }) {
           <div className="popup-content">
             <div className="img-container"></div>
             <div className="book-details">
-              <h1>Title</h1>
+              <h1>{selectedBook}</h1>
               <label htmlFor="">Author's Name</label>
               <p>Date</p>
               <button>Borrow</button>

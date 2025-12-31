@@ -235,12 +235,13 @@ body {
 .popup-content {
   opacity: 1;
   background-color: #ffffff;
-  height: 819px;
-  width: 582px;
+  height: 700px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  box-shadow: 0px 4px 5px 0px rgb(187, 187, 219);
 }
 .book-details button {
   margin-left: 280px;
@@ -259,6 +260,36 @@ body {
 .img-container {
   margin-top: 70px;
   width: 452px;
-  height: 557px;
+  height: 600px;
   background-color: #d9d9d9;
+}
+.user-option-container {
+  position: fixed;
+  z-index: 1000;
+  background-color: #eae7fa;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  height: 100%;
+  width: 500px;
+}
+.user-option-container button {
+  margin-top: 20px;
+  margin-left: 450px;
+}
+.user-option-container.open {
+  transform: translateX(0%);
+  background-color: #eae7fa;
+  opacity: 1;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 40px;
+  margin-top: 200px;
+  gap: 20px;
+  font-size: 20px;
+}
+.options label {
 }
