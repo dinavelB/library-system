@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon express-server.js",
+    "onServer": "nodemon express-server.js",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "dev:babel": "babel src --out-dir public --watch --extensions \".js,.jsx\""

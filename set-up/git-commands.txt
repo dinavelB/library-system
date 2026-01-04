@@ -1,1 +1,2 @@
-git rm --cached src/client/Components/index.css - to untracked tracked files
+1# git rm --cached src/client/Components/index.css - to untracked tracked files
+2# -r for folders or directories
