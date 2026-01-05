@@ -11,7 +11,7 @@ export default function Login() {
       <div className="holder">
         <div className="img-container"></div>
         <div className="p-container">
-          <span>
+          <span className="logo">
             Ed<span>Library</span>
           </span>
           <span className="welcome-admin">
