@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import "../../../CSS/Login.css";
 import { useState } from "react";
 
 export default function Login() {
@@ -34,7 +34,7 @@ export default function Login() {
     }
   };
   return (
-    <section>
+    <section className="login-container">
       <div className="holder">
         <div className="img-container"></div>
         <div className="p-container">
