@@ -37,9 +37,23 @@ section {
 }
 .p-container input {
   margin-top: -10px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #57534e;
+  padding-left: 20px;
+}
+.p-container input:focus {
+  border: none;
 }
 .p-container button {
   margin-top: 20px;
+  height: 43px;
+  transition: all, 0.3s ease-in-out;
+}
+.p-container button:hover {
+  background-color: #e4c090;
+  color: #57534e;
+  transform: translateY(-10px);
 }
 .welcome-admin p {
   margin-top: -20px;
