@@ -26,7 +26,7 @@ export default function Login() {
     });
 
     const printRes = await dBResponse.json();
-    console;
+
     if (dBResponse.ok) {
       console.log("admin logged in successfully");
       localStorage.setItem("adminToken", printRes.token);
