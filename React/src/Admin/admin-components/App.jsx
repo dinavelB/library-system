@@ -1,5 +1,6 @@
 import Navigation from "./Navigation";
+import Dashboard from "./Dashboard/Dashboard";
 
 export default function App() {
-  return <Navigation />;
+  return <Dashboard />;
 }

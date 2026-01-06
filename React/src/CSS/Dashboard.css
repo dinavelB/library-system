@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdfbf7;
+}
+.navigation-container {
+  background-color: #f1e9da;
+  width: 300px;
+  border-right: 1px solid #4a3b3377;
+  padding-top: 20px;
+  overflow: hidden;
+}
+.navigation-container ul {
+  margin-top: 50px;
+  list-style-type: none;
+  display: block;
+  padding: 20px;
+}
+.navigation-container li {
+  padding: 20px;
+  width: 100%;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all, 0.3s ease;
+  font-weight: 500;
+  color: 15px;
+}
+.navigation-container li:hover:not(.active) {
+  background-color: #e4c090;
+  transform: translateY(-2px);
+  border-radius: 20px;
+}
+.dashboard-holder {
+  display: flex;
+  height: 100vh;
+}
+.main-board-search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.input-holder {
+  background-color: #fdfbf7;
+  padding: 30px;
+  border-bottom: 1px solid #e4d9bc;
+  padding-left: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.main-board {
+  background-color: #f8f4ee;
+  height: 100%;
+  width: 1fr;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px #4a3b3386;
+}
+.logo {
+  margin-left: 50px;
+}
+.nav.active {
+  background-color: #b45309;
+  color: white;
+  border-radius: 20px;
+}
+.input-holder input {
+  height: 40px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #b45309;
+  padding-left: 40px;
+}
+.input-holder img {
+  position: absolute;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 20px;
+  }
+  .input-holder {
+    padding-left: 10px;
+  }
+  .navigation-container li {
+    padding-left: 10px;
+  }
+}
